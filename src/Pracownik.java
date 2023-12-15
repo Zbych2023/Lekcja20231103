@@ -48,6 +48,10 @@ public class Pracownik {
          podwyzka();
     }
 
+    public int getStaz() {
+        return staz;
+    }
+
     public void zwiekszStaz(){
         staz++;
         podwyzka();

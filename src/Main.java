@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
-    static ArrayList<Pracownik>pracownicy = new ArrayList<>();
+    static ArrayList<Pracownik> pracownicy = new ArrayList<>();
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       // String userName = myObj.nextLine();
+        // String userName = myObj.nextLine();
 
 
-
-
-        for ( int i = 0; i < 4; i++ ) {
+        for (int i = 0; i < 4; i++) {
             System.out.println("Podaj dane pracownika: Nazwisko, Imię, pesel, staż, wysokość pensji  ");
             String nazwisko = sc.next();
             String imie = sc.next();
@@ -18,24 +17,43 @@ public class Main {
             double pensja = sc.nextDouble();
             Pracownik pracownik1 = new Pracownik(nazwisko, imie, pesel, staz, pensja);
 //            pracownik1.wyswietl();
-          pracownicy.add(pracownik1);
+            pracownicy.add(pracownik1);
         }
-  //      tabela();
+        //      tabela();
 
-        for(int i = 0; i < 4; i++ ){
+        for (int i = 0; i < 4; i++) {
             pracownicy.get(i).zwiekszStaz();
 
-        } tabela();
+        }
+        tabela();
     }
-    public static void tabela (){
+
+    public static void tabela() {
         System.out.println("|     nazwisko  |     imie      |    pesel      |     plec      |     staz      |    pensja     |");
-        for(int i = 0; i < 97; i++){
+        for (int i = 0; i < 97; i++) {
             System.out.print("-");
         }
         System.out.println();
 
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             pracownicy.get(i).wyswietl();
         }
+    }
+
+    public static ArrayList<Pracownik> sortujPoStazu() {
+        ArrayList<Pracownik> posortowaniPpracownicy = new ArrayList<>();
+        int najmniejszyStaz = pracownicy.get(0).getStaz();
+        Pracownik pracownik = pracownicy.get(0);
+
+        for (int i = 0; i < 4; i++) {
+            pracownicy.get(i);
+            if(pracownicy.get(i).getStaz() < najmniejszyStaz){
+                najmniejszyStaz = pracownicy.get(i).getStaz();
+                pracownik = pracownicy.get(i);
+
+            }
+        } pracownicy.add(pracownik);
+
+        return posortowaniPpracownicy;
     }
 }
